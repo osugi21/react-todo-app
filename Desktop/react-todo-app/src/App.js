@@ -1,11 +1,13 @@
 import './App.css';
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Todo from './Todo';
 import Todolist from './Todolist';
 
 function App() {
   
   const [todos, setTodos] = useState([]);
+  const todoNameRef = useRef();
 
   const addTodo = () => {
 
