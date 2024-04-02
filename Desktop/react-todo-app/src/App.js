@@ -6,7 +6,7 @@ import InputTodo from './InputTodo';
 
 function App() {
   
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(["Todo1", "Todo2"]);
   const todoNameRef = useRef();
 
   const addTodo = () => {
@@ -24,7 +24,7 @@ function App() {
       <InputTodo />
     </div>
     <div>
-      <Todolist />
+      <Todolist todos={todos}/>
     </div>
   </div>
   )
