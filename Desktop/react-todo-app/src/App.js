@@ -17,11 +17,13 @@ function App() {
     };
 
     const deleteTodo = (id) => {
-       const todo = [...todos].find((todo) => todo.id === id);
-       const newTodos = todos.filter((todo) => !todo);
-       setTodos(newTodos);
-
+      // const newTodos = [...todos];
+      // const todo = newTodos.find((todo) => todo.id === id);
+      // setTodos(todos.filter((todo) => !todo.id))
+      const newTodo = todos.filter((todo) => todo.id !== id)
+      setTodos(newTodo)
     }
+    
   return (
   <div>
     <div>

@@ -1,14 +1,14 @@
 import React from 'react'
-import { useState } from "react";
+// import { useState } from "react";
 
 
 const Todo = ({ todo, deleteTodo }) => {
    
-  const [tasks, setTasks] = useState("")
+  // const [tasks, setTasks] = useState("")
 
   const handleClick = () => {
-    deleteTodo(tasks)
-    setTasks(deleteTodo)
+    deleteTodo(todo.id)
+    // setTasks(deleteTodo)
   }
 
   return (
