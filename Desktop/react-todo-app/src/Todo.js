@@ -2,13 +2,13 @@ import React from 'react'
 // import { useState } from "react";
 
 
-const Todo = ({ todo, deleteTodo }) => {
-   
-  // const [tasks, setTasks] = useState("")
+const Todo = ({ todo, deleteTodo, toggleTodo}) => {
 
+  const toggleButton = () => {
+    toggleTodo(todo.isFinished)
+  }
   const handleClick = () => {
     deleteTodo(todo.id)
-    // setTasks(deleteTodo)
   }
 
   return (

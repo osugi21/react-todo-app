@@ -13,7 +13,6 @@ const InputTodo = ({ addTodo }) => {
     <div>
         <input value={text}
                 onChange={(event) => setText(event.target.value)}/>
-        <p>{text}</p>
      <button onClick={handleClick}>追加</button>
     </div>
   );

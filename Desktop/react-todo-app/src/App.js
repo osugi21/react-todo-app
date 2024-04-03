@@ -21,17 +21,24 @@ function App() {
       // const todo = newTodos.find((todo) => todo.id === id);
       // setTodos(todos.filter((todo) => !todo.id))
       const newTodo = todos.filter((todo) => todo.id !== id)
-      setTodos(newTodo)
+      setTodos(newTodo);
     }
-    
+
+
+  const toggleTodo = (id) => {
+    const newTodo = [...todos];
+    const todo = newTodo.find((todo) => todo.id === id);
+    todo.isFinished = !todo.isFinished
+    setTodos(newTodo);
+  }
   return (
   <div>
     <div>
       <h1>ToDoList</h1>
       <InputTodo addTodo={addTodo}/>
     </div>
-    <div>
-      <Todolist todos={todos} addTodo={addTodo} deleteTodo={deleteTodo}/>
+    <div>toggleTod
+      <Todolist todos={todos} addTodo={addTodo} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>
     </div>
   </div>
   )

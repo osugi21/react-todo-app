@@ -1,9 +1,9 @@
 import React from 'react'
 import Todo from './Todo'
 
-const Todolist = ({ todos, deleteTodo }) => {
+const Todolist = ({ todos, deleteTodo, toggleTodo }) => {
 
-  return todos.map((todo) => <Todo todo={todo} key={todo.id} delateTodo={deleteTodo}/>);
+  return todos.map((todo) => <Todo todo={todo} key={todo.id} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>);
 };
 
 export default Todolist
