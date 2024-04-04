@@ -11,15 +11,12 @@ function App() {
 
   // 追加する動作
     const addTodo = (task) => {
-      setTodos((p) => {
-        return [...p, { id: uuidv4(), task: task, isFinished: false}]
+      setTodos((prevtodo) => {
+        return [...prevtodo, { id: uuidv4(), task: task, isFinished: false}]
       });
     };
 
     const deleteTodo = (id) => {
-      // const newTodos = [...todos];
-      // const todo = newTodos.find((todo) => todo.id === id);
-      // setTodos(todos.filter((todo) => !todo.id))
       const newTodo = todos.filter((todo) => todo.id !== id)
       setTodos(newTodo);
     }
@@ -28,7 +25,7 @@ function App() {
   const toggleTodo = (id) => {
     const newTodo = [...todos];
     const todo = newTodo.find((todo) => todo.id === id);
-    todo.isFinished = !todo.isFinished
+    todo.isFinished = !todo.isFinished;
     setTodos(newTodo);
   }
   return (
@@ -37,7 +34,7 @@ function App() {
       <h1>ToDoList</h1>
       <InputTodo addTodo={addTodo}/>
     </div>
-    <div>toggleTod
+    <div>
       <Todolist todos={todos} addTodo={addTodo} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>
     </div>
   </div>
